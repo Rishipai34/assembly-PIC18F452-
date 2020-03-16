@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=assembly5.asm assembly9.asm
+SOURCEFILES_QUOTED_IF_SPACED=assembly6.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/assembly5.o ${OBJECTDIR}/assembly9.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/assembly5.o.d ${OBJECTDIR}/assembly9.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/assembly6.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/assembly6.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/assembly5.o ${OBJECTDIR}/assembly9.o
+OBJECTFILES=${OBJECTDIR}/assembly6.o
 
 # Source Files
-SOURCEFILES=assembly5.asm assembly9.asm
+SOURCEFILES=assembly6.asm
 
 
 
@@ -95,38 +95,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/assembly5.o: assembly5.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/assembly6.o: assembly6.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/assembly5.o.d 
-	@${RM} ${OBJECTDIR}/assembly5.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly5.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly5.lst\" -e\"${OBJECTDIR}/assembly5.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly5.o\" \"assembly5.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/assembly5.o"
-	@${FIXDEPS} "${OBJECTDIR}/assembly5.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
-${OBJECTDIR}/assembly9.o: assembly9.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/assembly9.o.d 
-	@${RM} ${OBJECTDIR}/assembly9.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly9.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly9.lst\" -e\"${OBJECTDIR}/assembly9.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly9.o\" \"assembly9.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/assembly9.o"
-	@${FIXDEPS} "${OBJECTDIR}/assembly9.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/assembly6.o.d 
+	@${RM} ${OBJECTDIR}/assembly6.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly6.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly6.lst\" -e\"${OBJECTDIR}/assembly6.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly6.o\" \"assembly6.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/assembly6.o"
+	@${FIXDEPS} "${OBJECTDIR}/assembly6.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/assembly5.o: assembly5.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/assembly6.o: assembly6.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/assembly5.o.d 
-	@${RM} ${OBJECTDIR}/assembly5.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly5.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly5.lst\" -e\"${OBJECTDIR}/assembly5.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly5.o\" \"assembly5.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/assembly5.o"
-	@${FIXDEPS} "${OBJECTDIR}/assembly5.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
-${OBJECTDIR}/assembly9.o: assembly9.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/assembly9.o.d 
-	@${RM} ${OBJECTDIR}/assembly9.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly9.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly9.lst\" -e\"${OBJECTDIR}/assembly9.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly9.o\" \"assembly9.asm\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/assembly9.o"
-	@${FIXDEPS} "${OBJECTDIR}/assembly9.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/assembly6.o.d 
+	@${RM} ${OBJECTDIR}/assembly6.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/assembly6.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/assembly6.lst\" -e\"${OBJECTDIR}/assembly6.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/assembly6.o\" \"assembly6.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/assembly6.o"
+	@${FIXDEPS} "${OBJECTDIR}/assembly6.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 

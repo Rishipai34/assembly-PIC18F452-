@@ -540,7 +540,7 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
-      <item path="assembly5.asm" ex="false" overriding="false">
+      <item path="assembly5.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -548,7 +548,7 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
-      <item path="assembly6.asm" ex="true" overriding="false">
+      <item path="assembly6.asm" ex="false" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -571,6 +571,8 @@
         </MPASMWIN-LD>
         <mpasmsuite>
         </mpasmsuite>
+      </item>
+      <item path="assembly9.asm" ex="true" overriding="false">
       </item>
       <item path="assemby1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>

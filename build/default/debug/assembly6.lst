@@ -1,4 +1,4 @@
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  1
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -15,12 +15,38 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00008 ;==========================================================================
                       00009 
                       01255         LIST
-                      00002     org 0
-                      00003 
-                      00004 
-                      00005 
-Error[129]  : Expected (END)
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  2
+  00000F80            00002 porta equ 0xf80
+  00000F92            00003 trisa equ 0xf92
+                      00004         org 0   ; program to blink an led 50 times 
+000000 0E32           00005     movlw 0x32
+000002 6E14           00006     movwf 0x14
+000004 0E00           00007     movlw 0x0
+000006 6E92           00008     movwf trisa  
+000008 8080           00009     bsf porta,0
+                      00010 
+00000A 7080           00011 here btg porta,0 
+00000C 0614           00012     decf 0x14
+00000E E1??           00013     bnz st    
+000010 EF?? F???      00014     goto last    
+000014 0E64           00015 st  movlw 0x64
+000016 6E15           00016     movwf 0x15
+000018 0E64           00017 ca1 movlw 0x64
+00001A 6E16           00018     movwf 0x16
+00001C 0615           00019     decf 0x15
+00001E E1??           00020     bnz ca2
+000020 EF?? F???      00021     goto here
+000024 0E64           00022 ca2 movlw 0x64
+000026 6E17           00023     movwf 0x17
+000028 0616           00024     decf 0x16
+00002A E1??           00025     bnz ca3
+00002C EF?? F???      00026     goto ca1
+000030                00027 ca3
+000030 2E16           00028     decfsz 0x16
+000032 E1??           00029     bnz ca3
+000034 EF?? F???      00030     goto ca2
+000038                00031 last
+                      00032     end
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  2
 
 
 SYMBOL TABLE
@@ -79,7 +105,7 @@ CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2IP                            00000000
 CCP2M0                            00000000
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  3
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  3
 
 
 SYMBOL TABLE
@@ -138,7 +164,7 @@ EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
 FAST                              00000001
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  4
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  4
 
 
 SYMBOL TABLE
@@ -197,7 +223,7 @@ INTCON1                           00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
 INTEDG0                           00000006
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  5
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  5
 
 
 SYMBOL TABLE
@@ -256,7 +282,7 @@ LVDIN                             00000005
 LVDIP                             00000002
 LVDL0                             00000000
 LVDL1                             00000001
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  6
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  6
 
 
 SYMBOL TABLE
@@ -315,7 +341,7 @@ PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
 PORTE                             00000F84
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  7
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  7
 
 
 SYMBOL TABLE
@@ -374,7 +400,7 @@ RC3                               00000003
 RC4                               00000004
 RC5                               00000005
 RC6                               00000006
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  8
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  8
 
 
 SYMBOL TABLE
@@ -433,7 +459,7 @@ SS                                00000005
 SSPADD                            00000FC8
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE  9
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE  9
 
 
 SYMBOL TABLE
@@ -492,7 +518,7 @@ T3CKPS0                           00000004
 T3CKPS1                           00000005
 T3CON                             00000FB1
 T3INSYNC                          00000002
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE 10
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE 10
 
 
 SYMBOL TABLE
@@ -551,7 +577,7 @@ TRISA5                            00000005
 TRISA6                            00000006
 TRISB                             00000F93
 TRISB0                            00000000
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE 11
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE 11
 
 
 SYMBOL TABLE
@@ -610,7 +636,7 @@ WREN                              00000002
 WRERR                             00000003
 Z                                 00000002
 _BORV_20                          000000FF
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE 12
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE 12
 
 
 SYMBOL TABLE
@@ -669,7 +695,7 @@ _EC_OSC                           000000FC
 _EC_OSC_1H                        000000FC
 _HSPLL_OSC                        000000FE
 _HSPLL_OSC_1H                     000000FE
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE 13
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE 13
 
 
 SYMBOL TABLE
@@ -726,14 +752,24 @@ _WRTD_ON_6H                       0000007F
 _XT_OSC                           000000F9
 _XT_OSC_1H                        000000F9
 __18F452                          00000001
-
-MPASM 5.86                     ASSEMBLY7.ASM   2-29-2020  17:14:31         PAGE 14
-
-
-
+__DEBUG                           
+__MPLAB_DEBUGGER_SIMULATOR        1
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:36:07         PAGE 14
 
 
-Errors   :     1
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ca1                               00000018
+ca2                               00000024
+ca3                               00000030
+here                              0000000A
+last                              00000038
+porta                             00000F80
+st                                00000014
+trisa                             00000F92
+
+Errors   :     0
 Warnings :     0 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 

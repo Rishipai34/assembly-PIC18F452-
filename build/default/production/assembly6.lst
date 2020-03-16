@@ -1,4 +1,4 @@
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  1
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -15,16 +15,60 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00008 ;==========================================================================
                       00009 
                       01255         LIST
-                      00002     org 0; program to swap nibbles
-000000 0E0F           00003     movlw 0x0f
-000002 6E10           00004     movwf 0x10
-000004 0E04           00005     movlw 0x04
-000006 6E09           00006     movwf 0x9
-000008 3210           00007 loop rrcf 0x10
-00000A 2E09           00008     decfsz 0x9
-00000C EF?? F???      00009     goto loop
-                      00010     end
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  2
+  00000F80            00002 porta equ 0xf80
+  00000F92            00003 trisa equ 0xf92
+                      00004         org 0   ; program to blink an led 50 times 
+000000 0E32           00005     movlw 0x32
+000002 6E14           00006     movwf 0x14
+000004 0E00           00007     movlw 0x0
+000006 6E92           00008     movwf trisa  
+000008 8080           00009     bsf porta,0
+Warning[207]: Found label after column 1. (delay)
+00000A                00010     delay
+00000A 0E50           00011     movlw 50h 
+00000C 6E41           00012     movwf 41h
+00000E 0E50           00013 no1 movlw 50h
+000010 6E42           00014     movwf 42h
+000012 0E50           00015 no2 movlw 50h 
+000014 6E40           00016     movwf 40h
+000016 0000           00017 no3 nop
+000018 0000           00018     nop
+00001A 2E40           00019     decfsz 40h
+00001C EF?? F???      00020     goto no3
+000020 0641           00021     decf 41h
+000022 E1??           00022     bnz no2
+000024 0642           00023     decf 42h
+000026 E1??           00024     bnz no3
+000028 0012           00025     return
+00002A 7080           00026 here btg porta,0 
+00002C 0614           00027     decf 0x14
+00002E E1??           00028     bnz st    
+000030 EF?? F???      00029     goto last    
+000034 0E64           00030 st  movlw 0x64
+000036 6E15           00031     movwf 0x15
+000038 0E64           00032 ca1 movlw 0x64
+00003A 6E16           00033     movwf 0x16
+00003C 0615           00034     decf 0x15
+00003E E1??           00035     bnz ca2
+000040 EF?? F???      00036     goto here
+000044 0E64           00037 ca2 movlw 0x64
+000046 6E17           00038     movwf 0x17
+000048 0616           00039     decf 0x16
+00004A E1??           00040     bnz ca3
+00004C EF?? F???      00041     goto ca1
+000050 EC?? F???      00042 ca3 call delay
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000054 2E16           00043     decfsz 0x16
+000056 E1??           00044     bnz ca3
+000058 EF?? F???      00045     goto ca2
+00005C                00046 last
+                      00047     end
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  3
 
 
 SYMBOL TABLE
@@ -83,7 +127,7 @@ CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2IP                            00000000
 CCP2M0                            00000000
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  3
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  4
 
 
 SYMBOL TABLE
@@ -142,7 +186,7 @@ EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
 FAST                              00000001
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  4
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  5
 
 
 SYMBOL TABLE
@@ -201,7 +245,7 @@ INTCON1                           00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
 INTEDG0                           00000006
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  5
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  6
 
 
 SYMBOL TABLE
@@ -260,7 +304,7 @@ LVDIN                             00000005
 LVDIP                             00000002
 LVDL0                             00000000
 LVDL1                             00000001
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  6
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  7
 
 
 SYMBOL TABLE
@@ -319,7 +363,7 @@ PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
 PORTE                             00000F84
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  7
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  8
 
 
 SYMBOL TABLE
@@ -378,7 +422,7 @@ RC3                               00000003
 RC4                               00000004
 RC5                               00000005
 RC6                               00000006
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  8
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE  9
 
 
 SYMBOL TABLE
@@ -437,7 +481,7 @@ SS                                00000005
 SSPADD                            00000FC8
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE  9
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 10
 
 
 SYMBOL TABLE
@@ -496,7 +540,7 @@ T3CKPS0                           00000004
 T3CKPS1                           00000005
 T3CON                             00000FB1
 T3INSYNC                          00000002
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE 10
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 11
 
 
 SYMBOL TABLE
@@ -555,7 +599,7 @@ TRISA5                            00000005
 TRISA6                            00000006
 TRISB                             00000F93
 TRISB0                            00000000
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE 11
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 12
 
 
 SYMBOL TABLE
@@ -614,7 +658,7 @@ WREN                              00000002
 WRERR                             00000003
 Z                                 00000002
 _BORV_20                          000000FF
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE 12
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 13
 
 
 SYMBOL TABLE
@@ -673,7 +717,7 @@ _EC_OSC                           000000FC
 _EC_OSC_1H                        000000FC
 _HSPLL_OSC                        000000FE
 _HSPLL_OSC_1H                     000000FE
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE 13
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 14
 
 
 SYMBOL TABLE
@@ -730,18 +774,27 @@ _WRTD_ON_6H                       0000007F
 _XT_OSC                           000000F9
 _XT_OSC_1H                        000000F9
 __18F452                          00000001
-__DEBUG                           
-__MPLAB_DEBUGGER_SIMULATOR        1
-MPASM 5.86                     ASSEMBLY7.ASM   3-3-2020  6:35:16         PAGE 14
+ca1                               00000038
+ca2                               00000044
+MPASM 5.86                     ASSEMBLY6.ASM   3-15-2020  14:33:15         PAGE 15
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-loop                              00000008
+ca3                               00000050
+delay                             0000000A
+here                              0000002A
+last                              0000005C
+no1                               0000000E
+no2                               00000012
+no3                               00000016
+porta                             00000F80
+st                                00000034
+trisa                             00000F92
 
 Errors   :     0
-Warnings :     0 reported,     0 suppressed
+Warnings :     1 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

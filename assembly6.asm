@@ -7,6 +7,7 @@ trisa equ 0xf92
     movlw 0x0
     movwf trisa  
     bsf porta,0
+
 here btg porta,0 
     decf 0x14
     bnz st    
@@ -23,7 +24,8 @@ ca2 movlw 0x64
     decf 0x16
     bnz ca3
     goto ca1
-ca3 decfsz 0x16
+ca3
+    decfsz 0x16
     bnz ca3
     goto ca2
 last
@@ -34,4 +36,4 @@ last
     
     
 
-
+     

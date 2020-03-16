@@ -1,64 +1,50 @@
 MPLINK 5.09, LINKER
-Linker Map File - Created Sat Feb 29 17:14:56 2020
+Linker Map File - Created Sun Mar 15 14:33:16 2020
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x000090
-                   .cinit    romdata   0x000090    program   0x000002
+                   .org_0       code   0x000000    program   0x00005c
+                   .cinit    romdata   0x00005c    program   0x000002
 
 
 
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000091      
-            146 out of 33048 program addresses used, program memory utilization is 0%
+                            0x000000    0x00005d      
+            94 out of 33048 program addresses used, program memory utilization is 0%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                       c1   0x000020    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c11   0x000028    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c12   0x000036    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c13   0x000030    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c14   0x00003e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                       c2   0x000044    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c21   0x00004c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c22   0x00005a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c23   0x000054    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c24   0x000062    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                       c3   0x000068    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c31   0x000070    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c32   0x00007e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c33   0x000078    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c34   0x000086    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                     here   0x00000a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                     last   0x00008c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
+                      ca1   0x000038    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      ca2   0x000044    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      ca3   0x000050    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                    delay   0x00000a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                     here   0x00002a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                     last   0x00005c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no1   0x00000e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no2   0x000012    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no3   0x000016    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                       st   0x000034    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                     here   0x00000a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                       c1   0x000020    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c11   0x000028    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c13   0x000030    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c12   0x000036    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c14   0x00003e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                       c2   0x000044    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c21   0x00004c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c23   0x000054    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c22   0x00005a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c24   0x000062    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                       c3   0x000068    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c31   0x000070    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c33   0x000078    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c32   0x00007e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                      c34   0x000086    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
-                     last   0x00008c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly5.asm
+                    delay   0x00000a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no1   0x00000e    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no2   0x000012    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      no3   0x000016    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                     here   0x00002a    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                       st   0x000034    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      ca1   0x000038    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      ca2   0x000044    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                      ca3   0x000050    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
+                     last   0x00005c    program     static C:\Users\Rishikesh\MPLABXProjects\codetest_1.X\assembly6.asm
 
 
